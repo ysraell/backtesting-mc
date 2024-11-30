@@ -74,7 +74,7 @@ def get_data_history_ForwardMC(comp_code, intraday_data, period, N_MC_Sims):
 
 @cache
 def get_data_history_BackMC(comp_code, intraday_data, period, N_MC_Sims):
-    _, df_past = get_data_history(comp_code, intraday_data, period, groupby=False)
+    df_past, _ = get_data_history(comp_code, intraday_data, period, groupby=False)
     # Decompose the time series into trend, seasonal, and residual components
     # using the seasonal_decompose function from the statsmodels library.
     close = df_past.set_index("datetime")["close"]
